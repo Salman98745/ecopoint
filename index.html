@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoPoint — Tullantını dəyərə çevir</title>
+<meta name="description" content="EcoPoint — tullantıların çeşidlənməsi, toplanması və təkrar emalını rəqəmsal mükafat sistemi ilə birləşdirən ağıllı tullantı idarəetmə ekosistemi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ SVG SPRITE (Tosbik mascot + brand + station) ============ -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<defs>
+
+<symbol id="brand-mark" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="50" fill="#1f8a5c"/>
+  <path d="M50 20c16 0 29 12 29 28 0 14-10 25-23 28l2-10c7-3 12-10 12-18 0-11-9-20-20-20s-20 9-20 20c0 8 5 15 12 18l2 10C29 73 19 62 19 48c0-16 13-28 31-28z" fill="#fff"/>
+  <circle cx="50" cy="48" r="8" fill="#f0b429"/>
+</symbol>
+
+<symbol id="tosbik-wave" viewBox="0 0 240 240">
+  <ellipse cx="120" cy="222" rx="72" ry="9" fill="#0d3b2a" opacity="0.08"/>
+  <ellipse cx="72" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(-10 72 196)"/>
+  <ellipse cx="168" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(10 168 196)"/>
+  <ellipse cx="120" cy="150" rx="98" ry="72" fill="#186644"/>
+  <ellipse cx="120" cy="140" rx="86" ry="60" fill="#1f8a5c"/>
+  <g fill="#2ea36f" opacity="0.7">
+    <circle cx="90" cy="120" r="9"/><circle cx="120" cy="112" r="9"/><circle cx="150" cy="120" r="9"/>
+    <circle cx="75" cy="145" r="9"/><circle cx="105" cy="150" r="9"/><circle cx="135" cy="150" r="9"/><circle cx="165" cy="145" r="9"/>
+    <circle cx="90" cy="172" r="9"/><circle cx="120" cy="178" r="9"/><circle cx="150" cy="172" r="9"/>
+  </g>
+  <ellipse cx="50" cy="172" rx="20" ry="16" fill="#fbead0" transform="rotate(-18 50 172)"/>
+  <g transform="rotate(-30 190 150)"><ellipse cx="198" cy="128" rx="16" ry="23" fill="#fbead0"/></g>
+  <g stroke="#c98a12" stroke-width="4" stroke-linecap="round" opacity="0.55">
+    <line x1="224" y1="92" x2="234" y2="84"/><line x1="230" y1="110" x2="242" y2="108"/><line x1="222" y1="128" x2="232" y2="132"/>
+  </g>
+  <circle cx="120" cy="82" r="46" fill="#fdf1d6"/>
+  <ellipse cx="120" cy="102" rx="30" ry="15" fill="#fbe4bd" opacity="0.55"/>
+  <circle cx="102" cy="76" r="10" fill="#0d3b2a"/><circle cx="138" cy="76" r="10" fill="#0d3b2a"/>
+  <circle cx="105" cy="72" r="3" fill="#fff"/><circle cx="141" cy="72" r="3" fill="#fff"/>
+  <ellipse cx="92" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/><ellipse cx="148" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/>
+  <path d="M104 96 Q120 110 136 96" stroke="#0d3b2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+</symbol>
+
+<symbol id="tosbik-happy" viewBox="0 0 240 240">
+  <ellipse cx="120" cy="222" rx="72" ry="9" fill="#0d3b2a" opacity="0.08"/>
+  <g transform="rotate(-12 72 196)"><ellipse cx="72" cy="192" rx="19" ry="24" fill="#fbead0"/></g>
+  <g transform="rotate(12 168 196)"><ellipse cx="168" cy="192" rx="19" ry="24" fill="#fbead0"/></g>
+  <ellipse cx="120" cy="150" rx="98" ry="72" fill="#186644"/>
+  <ellipse cx="120" cy="140" rx="86" ry="60" fill="#1f8a5c"/>
+  <g fill="#2ea36f" opacity="0.7">
+    <circle cx="90" cy="120" r="9"/><circle cx="120" cy="112" r="9"/><circle cx="150" cy="120" r="9"/>
+    <circle cx="75" cy="145" r="9"/><circle cx="105" cy="150" r="9"/><circle cx="135" cy="150" r="9"/><circle cx="165" cy="145" r="9"/>
+    <circle cx="90" cy="172" r="9"/><circle cx="120" cy="178" r="9"/><circle cx="150" cy="172" r="9"/>
+  </g>
+  <g transform="rotate(20 46 168)"><ellipse cx="46" cy="168" rx="19" ry="15" fill="#fbead0"/></g>
+  <g transform="rotate(-20 194 168)"><ellipse cx="194" cy="168" rx="19" ry="15" fill="#fbead0"/></g>
+  <g fill="#f0b429">
+    <path d="M40 50l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+    <path d="M200 40l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+    <path d="M195 90l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+  </g>
+  <circle cx="120" cy="82" r="46" fill="#fdf1d6"/>
+  <ellipse cx="120" cy="102" rx="30" ry="15" fill="#fbe4bd" opacity="0.55"/>
+  <path d="M92 70 Q102 60 112 70" stroke="#0d3b2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M128 70 Q138 60 148 70" stroke="#0d3b2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="92" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.6"/><ellipse cx="148" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.6"/>
+  <path d="M100 94 Q120 118 140 94 Q120 106 100 94Z" fill="#0d3b2a"/>
+  <path d="M108 98 Q120 106 132 98" stroke="#e8583f" stroke-width="4" fill="none" stroke-linecap="round"/>
+</symbol>
+
+<symbol id="tosbik-trophy" viewBox="0 0 240 240">
+  <ellipse cx="120" cy="222" rx="72" ry="9" fill="#0d3b2a" opacity="0.08"/>
+  <ellipse cx="72" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(-10 72 196)"/>
+  <ellipse cx="168" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(10 168 196)"/>
+  <ellipse cx="120" cy="150" rx="98" ry="72" fill="#186644"/>
+  <ellipse cx="120" cy="140" rx="86" ry="60" fill="#1f8a5c"/>
+  <g fill="#2ea36f" opacity="0.7">
+    <circle cx="90" cy="120" r="9"/><circle cx="120" cy="112" r="9"/><circle cx="150" cy="120" r="9"/>
+    <circle cx="75" cy="145" r="9"/><circle cx="105" cy="150" r="9"/><circle cx="135" cy="150" r="9"/><circle cx="165" cy="145" r="9"/>
+    <circle cx="90" cy="172" r="9"/><circle cx="120" cy="178" r="9"/><circle cx="150" cy="172" r="9"/>
+  </g>
+  <ellipse cx="50" cy="172" rx="20" ry="16" fill="#fbead0" transform="rotate(-18 50 172)"/>
+  <g transform="rotate(-18 192 120)">
+    <ellipse cx="196" cy="140" rx="16" ry="23" fill="#fbead0"/>
+    <g transform="translate(180,86)">
+      <path d="M0 8h28v6c0 9-6 15-14 15s-14-6-14-15V8z" fill="#f0b429"/>
+      <rect x="10" y="29" width="8" height="8" fill="#f0b429"/>
+      <rect x="4" y="37" width="20" height="5" rx="2" fill="#c98a12"/>
+      <path d="M0 10c-8 0-8 16 0 18" stroke="#f0b429" stroke-width="3" fill="none"/>
+      <path d="M28 10c8 0 8 16 0 18" stroke="#f0b429" stroke-width="3" fill="none"/>
+    </g>
+  </g>
+  <circle cx="120" cy="82" r="46" fill="#fdf1d6"/>
+  <ellipse cx="120" cy="102" rx="30" ry="15" fill="#fbe4bd" opacity="0.55"/>
+  <circle cx="102" cy="76" r="10" fill="#0d3b2a"/><circle cx="138" cy="76" r="10" fill="#0d3b2a"/>
+  <circle cx="105" cy="72" r="3" fill="#fff"/><circle cx="141" cy="72" r="3" fill="#fff"/>
+  <ellipse cx="92" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/><ellipse cx="148" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/>
+  <path d="M104 96 Q120 112 136 96" stroke="#0d3b2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+</symbol>
+
+<symbol id="tosbik-leaf" viewBox="0 0 240 240">
+  <ellipse cx="120" cy="222" rx="72" ry="9" fill="#0d3b2a" opacity="0.08"/>
+  <ellipse cx="72" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(-10 72 196)"/>
+  <ellipse cx="168" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(10 168 196)"/>
+  <ellipse cx="120" cy="150" rx="98" ry="72" fill="#186644"/>
+  <ellipse cx="120" cy="140" rx="86" ry="60" fill="#1f8a5c"/>
+  <g fill="#2ea36f" opacity="0.7">
+    <circle cx="90" cy="120" r="9"/><circle cx="120" cy="112" r="9"/><circle cx="150" cy="120" r="9"/>
+    <circle cx="75" cy="145" r="9"/><circle cx="105" cy="150" r="9"/><circle cx="135" cy="150" r="9"/><circle cx="165" cy="145" r="9"/>
+    <circle cx="90" cy="172" r="9"/><circle cx="120" cy="178" r="9"/><circle cx="150" cy="172" r="9"/>
+  </g>
+  <ellipse cx="188" cy="172" rx="20" ry="16" fill="#fbead0" transform="rotate(18 188 172)"/>
+  <g transform="rotate(20 54 150)">
+    <ellipse cx="52" cy="150" rx="16" ry="23" fill="#fbead0"/>
+    <path d="M30 108c-14 6-16 26-4 34 2-14 8-24 4-34z" fill="#4dbb87"/>
+    <path d="M27 116c3 8 3 16 0 22" stroke="#186644" stroke-width="2" fill="none"/>
+  </g>
+  <circle cx="120" cy="82" r="46" fill="#fdf1d6"/>
+  <ellipse cx="120" cy="102" rx="30" ry="15" fill="#fbe4bd" opacity="0.55"/>
+  <circle cx="102" cy="76" r="10" fill="#0d3b2a"/><circle cx="138" cy="76" r="10" fill="#0d3b2a"/>
+  <circle cx="105" cy="72" r="3" fill="#fff"/><circle cx="141" cy="72" r="3" fill="#fff"/>
+  <ellipse cx="92" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/><ellipse cx="148" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/>
+  <path d="M104 96 Q120 110 136 96" stroke="#0d3b2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+</symbol>
+
+<symbol id="ep-station" viewBox="0 0 240 340">
+  <ellipse cx="120" cy="326" rx="88" ry="11" fill="#0d3b2a" opacity="0.08"/>
+  <rect x="40" y="36" width="160" height="270" rx="28" fill="#186644"/>
+  <rect x="56" y="56" width="128" height="80" rx="16" fill="#0a2e22"/>
+  <rect x="66" y="66" width="108" height="60" rx="10" fill="#2ea36f"/>
+  <text x="120" y="98" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif">+10 EcoCoin</text>
+  <text x="120" y="118" font-size="11" fill="#dff3e6" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif">Plastik aşkarlandı</text>
+  <rect x="60" y="152" width="46" height="46" rx="12" fill="#fdf1d6"/>
+  <text x="83" y="182" font-size="22" text-anchor="middle">🥤</text>
+  <rect x="134" y="152" width="46" height="46" rx="12" fill="#fdf1d6"/>
+  <text x="157" y="182" font-size="22" text-anchor="middle">📄</text>
+  <rect x="60" y="208" width="46" height="46" rx="12" fill="#fdf1d6"/>
+  <text x="83" y="238" font-size="22" text-anchor="middle">🍾</text>
+  <rect x="134" y="208" width="46" height="46" rx="12" fill="#fdf1d6"/>
+  <text x="157" y="238" font-size="22" text-anchor="middle">🔩</text>
+  <circle cx="120" cy="24" r="9" fill="#f0b429"/>
+  <rect x="20" y="284" width="200" height="18" rx="9" fill="#124d36"/>
+</symbol>
+
+</defs>
+</svg>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="container">
+    <a href="#top" class="brand">
+      <svg class="brand-mark"><use href="#brand-mark"/></svg>
+      Eco<span class="dot">Point</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#solution">Necə işləyir?</a>
+      <a href="#station">Məntəqə</a>
+      <a href="#tosbik">Tosbik</a>
+      <a href="#ecocoin">EcoCoin</a>
+      <a href="#business">Biznes üçün</a>
+      <a href="#impact">Ekoloji təsir</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#cta" class="btn btn-outline" style="padding:12px 22px;">Ekosistemə qoşul</a>
+      <button class="nav-toggle" aria-label="Menyu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="leaf" style="top:14%; left:6%;">🍃</div>
+  <div class="leaf" style="top:70%; left:2%; animation-delay:2s;">🍃</div>
+  <div class="leaf" style="top:22%; right:4%; animation-delay:4s;">🍃</div>
+  <div class="container">
+    <div class="hero-copy">
+      <div class="eyebrow">♻️ Ağıllı tullantı ekosistemi</div>
+      <h1>Tullantını <span class="highlight">dəyərə</span> çevir. ♻️</h1>
+      <p class="lead">EcoPoint tullantıların çeşidlənməsi, toplanması və təkrar emalını rəqəmsal mükafat sistemi ilə birləşdirən ağıllı tullantı idarəetmə ekosistemidir.</p>
+      <div class="cta-row">
+        <a href="#solution" class="btn btn-primary">EcoPoint necə işləyir?</a>
+        <a href="#ecosystem" class="btn btn-outline">Layihəni kəşf et</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b><span data-counter="4" data-suffix="">0</span></b><span>Tullantı növü üzrə çeşidləmə</span></div>
+        <div class="stat"><b><span data-counter="100" data-suffix="%">0</span></b><span>Rəqəmsal izlənilən proses</span></div>
+        <div class="stat"><b>24/7</b><span>Ağıllı məntəqə xidməti</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="glow"></div>
+      <div class="orbit-badge b1">🥤</div>
+      <div class="orbit-badge b2">📄</div>
+      <div class="orbit-badge b3">🍾</div>
+      <div class="orbit-badge b4">🔩</div>
+      <div class="orbit-badge b5">🪙</div>
+      <div class="orbit-badge b6">🌱</div>
+      <div class="station-wrap">
+        <svg viewBox="0 0 240 340"><use href="#ep-station"/></svg>
+      </div>
+      <svg class="hero-tosbik" viewBox="0 0 240 240"><use href="#tosbik-wave"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Problem</div>
+      <h2>Tullantı sadəcə zibil deyil.</h2>
+      <p>Bu gün təkrar emal edilə bilən materialların böyük hissəsi düzgün çeşidlənmədiyi üçün ümumi tullantı axınına qarışır.</p>
+    </div>
+
+    <div class="problem-flow reveal d1">
+      <div class="pf-item bad">🥤 Plastik <span class="tag">→ Zibil</span></div>
+      <span class="pf-arrow">＋</span>
+      <div class="pf-item bad">📄 Kağız <span class="tag">→ Zibil</span></div>
+      <span class="pf-arrow">＋</span>
+      <div class="pf-item bad">🍾 Şüşə <span class="tag">→ Zibil</span></div>
+      <span class="pf-arrow">＋</span>
+      <div class="pf-item bad">🔩 Metal <span class="tag">→ Zibil</span></div>
+    </div>
+
+    <div class="consequence-grid">
+      <div class="consequence-card reveal d1"><div class="emoji">🗑️</div><b>Daha çox tullantı</b></div>
+      <div class="consequence-card reveal d2"><div class="emoji">📉</div><b>Xammal itkisi</b></div>
+      <div class="consequence-card reveal d3"><div class="emoji">🌫️</div><b>Çirklənmə</b></div>
+      <div class="consequence-card reveal d4"><div class="emoji">♻️</div><b>Daha aşağı təkrar emal</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HƏLL ============ -->
+<section class="section section--alt" id="solution">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Həll</div>
+      <h2>Bizim həllimiz — EcoPoint</h2>
+      <p>EcoPoint şəhərin müxtəlif ərazilərində yerləşdirilən ağıllı tullantı toplama məntəqələri və onları birləşdirən rəqəmsal platformadan ibarət ekosistemdir.</p>
+    </div>
+
+    <div class="reveal d1">
+      <p style="font-weight:700; color:var(--text-dark); margin-bottom:14px;">İstifadəçi tullantını növünə görə çeşidləyir:</p>
+      <div class="sort-icons">
+        <div class="sort-icon">🥤 Plastik</div>
+        <div class="sort-icon">📄 Kağız</div>
+        <div class="sort-icon">🍾 Şüşə</div>
+        <div class="sort-icon">🔩 Metal</div>
+      </div>
+      <p style="max-width:640px;">QR kod vasitəsilə istifadəçi tanınır və təhvil verilən tullantıya uyğun EcoCoin qazanır.</p>
+    </div>
+
+    <div class="flow-diagram reveal d2">
+      <div class="flow-step"><div class="emoji">🗑️</div><span>Tullantı</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="emoji">🧩</div><span>Çeşidləmə</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="emoji">♻️</div><span>EcoPoint</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="emoji">🪙</div><span>EcoCoin</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="emoji">🎁</div><span>Mükafat</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="emoji">🏭</div><span>Təkrar emal</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="emoji">🌍</div><span>Ekoloji dəyər</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AĞILLI MƏNTƏQƏ ============ -->
+<section class="section" id="station">
+  <div class="container">
+    <div class="station-layout">
+      <div class="station-visual reveal">
+        <div class="glow-bg"></div>
+        <svg viewBox="0 0 240 340" style="max-width:320px;margin:0 auto;position:relative;"><use href="#ep-station"/></svg>
+      </div>
+      <div>
+        <div class="section-header reveal">
+          <div class="eyebrow">Ağıllı EcoPoint məntəqəsi</div>
+          <h2>Bu, sadəcə zibil qutusu deyil.</h2>
+          <p>Hər EcoPoint məntəqəsi tullantını tanıyır, izah edir və istifadəçini real vaxtda mükafatlandırır.</p>
+        </div>
+        <div class="grid grid-2">
+          <div class="card reveal d1"><div class="icon-badge">🥤</div><h3>Plastik</h3><p>Plastik atıldıqda uyğun səs effekti ilə təsdiqlənir.</p></div>
+          <div class="card reveal d2"><div class="icon-badge">📄</div><h3>Kağız</h3><p>Kağız atıldıqda özünəməxsus kağız səsi verilir.</p></div>
+          <div class="card reveal d3"><div class="icon-badge">🍾</div><h3>Şüşə</h3><p>Şüşə üçün uyğun səs effekti ilə növ təsdiqlənir.</p></div>
+          <div class="card reveal d4"><div class="icon-badge">🖥️</div><h3>İnteraktiv ekran</h3><p>Ekranda tullantının növü və qazandırdığı EcoCoin göstərilir.</p></div>
+          <div class="card reveal d5"><div class="icon-badge">🔊</div><h3>Səsli bildiriş</h3><p>“Təşəkkürlər! +10 EcoCoin qazandınız!”</p></div>
+          <div class="card reveal d6"><div class="icon-badge">📊</div><h3>Ekoloji statistika</h3><p>Topladığı tullantı və yaratdığı ekoloji təsir göstərilir.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:60px;max-width:420px;">
+      <p style="font-weight:700;color:var(--text-dark);margin-bottom:14px;">Canlı ekran nümunəsi:</p>
+      <div class="dashboard-mock" style="max-width:340px;">
+        <div class="dashboard-topbar"><span>EcoPoint ekranı</span><div class="dashboard-dots"><span></span><span></span><span></span></div></div>
+        <div data-station-demo style="padding:30px;text-align:center;">
+          <div class="demo-icon" style="font-size:2.6rem;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECOPOINT TƏTBİQİ ============ -->
+<section class="section section--alt" id="app">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">EcoPoint tətbiqi</div>
+      <h2>Tullantını atmaqla bitmir.</h2>
+      <p>Tətbiqdə istifadəçi öz ekoloji izini, EcoCoin balansını və reytinqini izləyir. (Vizual təqdimat — funksional tətbiq deyil)</p>
+    </div>
+
+    <div class="mockup-row reveal d1">
+      <div class="phone">
+        <div class="phone-screen">
+          <h4>Mənim statistikam</h4>
+          <div class="phone-stat-card"><b>128 kq</b><span>Toplanmış tullantı</span></div>
+          <div class="phone-stat-card"><b>940</b><span>Qazanılmış EcoCoin</span></div>
+          <div class="phone-badge-row">
+            <span class="phone-pill">🥤 Plastik 46%</span>
+            <span class="phone-pill">📄 Kağız 24%</span>
+            <span class="phone-pill">🍾 Şüşə 18%</span>
+            <span class="phone-pill">🔩 Metal 12%</span>
+          </div>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="phone-screen">
+          <h4>Ekoloji təsirim</h4>
+          <div class="phone-stat-card"><b>36 kq</b><span>Azaldılmış CO₂ (nümunəvi)</span></div>
+          <div class="phone-stat-card"><b>21</b><span>Xilas edilmiş ağac ekvivalenti (nümunəvi)</span></div>
+          <div class="phone-bar-track"><div class="phone-bar" style="width:72%"></div></div>
+          <span style="font-size:0.75rem;color:var(--text-soft);">Aylıq hədəfin 72%-i</span>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="phone-screen">
+          <h4>Reytinq və mükafatlar</h4>
+          <div class="phone-rank"><span>🥇 Sənin yerin</span><b>#3</b></div>
+          <div class="phone-stat-card" style="margin-top:14px;"><b>750 EcoCoin</b><span>Növbəti mükafata qədər</span></div>
+          <div class="phone-badge-row">
+            <span class="phone-pill">🎟️ Kupon</span>
+            <span class="phone-pill">☕ Endirim</span>
+            <span class="phone-pill">🏆 Nişan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOSBIK ============ -->
+<section class="section" id="tosbik">
+  <div class="container">
+    <div class="tosbik-layout">
+      <svg class="tosbik-big reveal" viewBox="0 0 240 240"><use href="#tosbik-happy"/></svg>
+      <div>
+        <div class="section-header reveal">
+          <div class="eyebrow">Layihənin dostu</div>
+          <h2>Tosbik 🐢</h2>
+          <p>Tosbik EcoPoint-un rəqəmsal maskotudur. İstifadəçini qarşılayır, EcoCoin qazandıqda reaksiya verir, yarışlarda motivasiya edir və ekoloji maarifləndirmə mesajları verir.</p>
+        </div>
+        <div class="tosbik-quote reveal d1">
+          <span class="emoji-turtle">🐢</span>
+          <span>“Əla! Bu gün 5 plastik butulkanı təkrar emala göndərdin!”</span>
+        </div>
+
+        <div class="emotion-grid reveal d2">
+          <div class="emotion-card"><div class="emote-circle">🙂</div><span>Salamlayır</span></div>
+          <div class="emotion-card"><div class="emote-circle">🎉</div><span>Sevinir</span></div>
+          <div class="emotion-card"><div class="emote-circle">🌱</div><span>Mesaj verir</span></div>
+          <div class="emotion-card"><div class="emote-circle">🏆</div><span>Motivasiya edir</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GAMIFICATION ============ -->
+<section class="section section--alt" id="gamification">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Oyunlaşdırma</div>
+      <h2>Təkrar emalı oyuna çeviririk.</h2>
+      <p>İstifadəçilər EcoCoin qazanır, reytinqdə yüksəlir, yarışlarda iştirak edir, nailiyyətlər və mükafatlar əldə edir.</p>
+    </div>
+
+    <div class="game-flow reveal d1">
+      <div class="game-step"><div class="circle">🧩</div><span>Çeşidlə</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="game-step"><div class="circle">🪙</div><span>Qazan</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="game-step"><div class="circle">🏁</div><span>Yarış</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="game-step"><div class="circle">🎁</div><span>Mükafatlandırıl</span></div>
+    </div>
+
+    <div class="two-col reveal d2">
+      <div class="grid grid-2">
+        <div class="card"><div class="icon-badge">🪙</div><h3>EcoCoin</h3><p>Hər çeşidləmə üçün rəqəmsal mükafat qazanılır.</p></div>
+        <div class="card"><div class="icon-badge">📈</div><h3>Reytinq</h3><p>İstifadəçilər ümumi və şəhər üzrə reytinqdə yüksəlir.</p></div>
+        <div class="card"><div class="icon-badge">🏆</div><h3>Nailiyyətlər</h3><p>Müəyyən hədəflərə çatanda nişanlar qazanılır.</p></div>
+        <div class="card"><div class="icon-badge">🎁</div><h3>Mükafatlar</h3><p>Toplanan EcoCoin real endirim və hədiyyələrə çevrilir.</p></div>
+      </div>
+      <svg viewBox="0 0 240 240" style="max-width:280px;margin:0 auto;"><use href="#tosbik-trophy"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECOUNIVERSITY CHALLENGE ============ -->
+<section class="section" id="university">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">EcoUniversity Challenge</div>
+      <h2>Universitetlər arasında aylıq yarış</h2>
+      <p>Məktəb, universitet və şirkətləri sistemə cəlb edən yarış mexanizmi. Məqsəd yalnız fərdi insanları deyil, bütöv icmaları təkrar emala cəlb etməkdir.</p>
+    </div>
+
+    <div class="leaderboard reveal d1">
+      <div class="lb-row gold">
+        <div class="lb-rank">🥇</div>
+        <div class="lb-name">Gəncə Dövlət Universiteti</div>
+        <div class="lb-bar-wrap"><div class="lb-bar" style="width:92%"></div></div>
+        <div class="lb-score">4 820 EC</div>
+      </div>
+      <div class="lb-row">
+        <div class="lb-rank">🥈</div>
+        <div class="lb-name">ADA Universiteti</div>
+        <div class="lb-bar-wrap"><div class="lb-bar" style="width:78%"></div></div>
+        <div class="lb-score">3 940 EC</div>
+      </div>
+      <div class="lb-row">
+        <div class="lb-rank">🥉</div>
+        <div class="lb-name">Azərbaycan Texniki Universiteti</div>
+        <div class="lb-bar-wrap"><div class="lb-bar" style="width:65%"></div></div>
+        <div class="lb-score">3 210 EC</div>
+      </div>
+      <div class="lb-row">
+        <div class="lb-rank">4</div>
+        <div class="lb-name">Bakı Dövlət Universiteti</div>
+        <div class="lb-bar-wrap"><div class="lb-bar" style="width:52%"></div></div>
+        <div class="lb-score">2 640 EC</div>
+      </div>
+      <div class="lb-row">
+        <div class="lb-rank">5</div>
+        <div class="lb-name">Sumqayıt Dövlət Universiteti</div>
+        <div class="lb-bar-wrap"><div class="lb-bar" style="width:41%"></div></div>
+        <div class="lb-score">2 080 EC</div>
+      </div>
+    </div>
+    <p class="lb-note reveal d2">* Bu rəqəmlər və universitet sıralamaları yalnız demo nümunəsidir, real nəticə kimi təqdim edilmir.</p>
+  </div>
+</section>
+
+<!-- ============ ECOCOIN ============ -->
+<section class="section section--alt" id="ecocoin">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">EcoCoin</div>
+      <h2>Yaxşı davranış real dəyərə çevrilir.</h2>
+      <p>İstifadəçi tullantı təhvil verir → EcoCoin qazanır → EcoCoin real mükafatlara çevrilir.</p>
+    </div>
+
+    <div class="ecocoin-layout">
+      <div class="coin-stack-wrap reveal d1">
+        <div class="coin c4">EC</div>
+        <div class="coin c2">EC</div>
+        <div class="coin c3">EC</div>
+        <div class="coin c1">EC</div>
+      </div>
+      <div class="reveal d2">
+        <div class="reward-tiers">
+          <div class="reward-tier"><div class="amount">🪙 500 EcoCoin</div><div class="desc">5 AZN endirim</div></div>
+          <div class="reward-tier"><div class="amount">🪙 750 EcoCoin</div><div class="desc">Pulsuz içki</div></div>
+          <div class="reward-tier"><div class="amount">🪙 1000 EcoCoin</div><div class="desc">Market kuponu</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNYOR BİZNESLƏR ============ -->
+<section class="section" id="partners">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">EcoPoint + Yerli biznes</div>
+      <h2>Tərəfdaşlıq şəhəri dəyişdirir.</h2>
+      <p>İlk mərhələdə Gəncədəki yerli bizneslərlə tərəfdaşlıq modeli qurulur.</p>
+    </div>
+
+    <div class="partner-badges reveal d1" style="justify-content:center;">
+      <div class="partner-badge">☕ Kafelər</div>
+      <div class="partner-badge">🍽️ Restoranlar</div>
+      <div class="partner-badge">📚 Kitab mağazaları</div>
+      <div class="partner-badge">🛍️ Mağazalar</div>
+    </div>
+
+    <div class="triangle-model reveal d2">
+      <div class="triangle-card"><div class="emoji">🏢</div><h4>Biznes</h4><p>Yeni müştərilər + ekoloji imic qazanır.</p></div>
+      <div class="triangle-card"><div class="emoji">👤</div><h4>İstifadəçi</h4><p>EcoCoin + real mükafat qazanır.</p></div>
+      <div class="triangle-card"><div class="emoji">♻️</div><h4>EcoPoint</h4><p>Tərəfdaşlıq gəliri + ekosistemin böyüməsini qazanır.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECOCOIN → EKOLOJİ İŞLƏR ============ -->
+<section class="section section--alt" id="donate">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Alternativ seçim</div>
+      <h2>Mükafat seçmək və ya yaxşılığa çevirmək.</h2>
+      <p>İstifadəçi EcoCoin-lərini yalnız mükafatlara xərcləmək məcburiyyətində deyil — ekoloji layihələrə də bağışlaya bilər.</p>
+    </div>
+
+    <div class="donate-grid reveal d1">
+      <div class="donate-card"><div class="emoji">🌳</div><b>Ağacəkmə</b></div>
+      <div class="donate-card"><div class="emoji">🌱</div><b>Yaşıllaşdırma</b></div>
+      <div class="donate-card"><div class="emoji">🌊</div><b>Su hövzələrinin təmizlənməsi</b></div>
+      <div class="donate-card"><div class="emoji">♻️</div><b>Ekoloji layihələr</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MÜƏSSİSƏLƏR ÜÇÜN HƏLL ============ -->
+<section class="section" id="business">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">B2B həll</div>
+      <h2>EcoPoint bizneslər üçün də işləyir.</h2>
+      <p>Şirkətlər, restoranlar, kafelər və digər müəssisələr öz tullantılarını izləyə, hesabat ala və ekoloji göstəricilərini idarə edə bilər.</p>
+    </div>
+
+    <div class="dashboard-mock reveal d1">
+      <div class="dashboard-topbar">
+        <span>EcoPoint Business Panel</span>
+        <div class="dashboard-dots"><span></span><span></span><span></span></div>
+      </div>
+      <div class="dashboard-body">
+        <div class="dash-tile"><span>Ümumi tullantı</span><b>2 340 kq</b><div class="bar-track"><div class="bar" style="width:88%"></div></div></div>
+        <div class="dash-tile"><span>Plastik</span><b>920 kq</b><div class="bar-track"><div class="bar" style="width:70%"></div></div></div>
+        <div class="dash-tile"><span>Kağız</span><b>640 kq</b><div class="bar-track"><div class="bar" style="width:55%"></div></div></div>
+        <div class="dash-tile"><span>Şüşə</span><b>410 kq</b><div class="bar-track"><div class="bar" style="width:40%"></div></div></div>
+        <div class="dash-tile"><span>Metal</span><b>370 kq</b><div class="bar-track"><div class="bar" style="width:35%"></div></div></div>
+        <div class="dash-tile"><span>Təkrar emal faizi</span><b>76%</b><div class="bar-track"><div class="bar" style="width:76%"></div></div></div>
+        <div class="dash-tile"><span>Aylıq trend</span><b>+18%</b><div class="bar-track"><div class="bar" style="width:60%"></div></div></div>
+        <div class="dash-tile"><span>Ekoloji reytinq</span><b>A+</b><div class="bar-track"><div class="bar" style="width:95%"></div></div></div>
+      </div>
+    </div>
+    <p class="lb-note reveal d2">* Panel yalnız konseptin vizual təqdimatıdır, real məlumat bazasına qoşulmur.</p>
+  </div>
+</section>
+
+<!-- ============ TULLANTININ SONRAKI MƏRHƏLƏSİ ============ -->
+<section class="section section--alt" id="lifecycle">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Sonrakı mərhələ</div>
+      <h2>Tullantı burada bitmir.</h2>
+      <p>Toplanan tullantılar çeşidlənərək təkrar emal müəssisələrinə göndərilir.</p>
+    </div>
+
+    <div class="grid grid-4 reveal d1">
+      <div class="card center-text"><div class="icon-badge" style="margin:0 auto 14px;">♻️</div><h3>Plastik</h3><p>→ Təkrar emal zavoduna</p></div>
+      <div class="card center-text"><div class="icon-badge" style="margin:0 auto 14px;">📄</div><h3>Kağız</h3><p>→ Kağız fabrikinə</p></div>
+      <div class="card center-text"><div class="icon-badge" style="margin:0 auto 14px;">🍾</div><h3>Şüşə</h3><p>→ Şüşə emalına</p></div>
+      <div class="card center-text"><div class="icon-badge" style="margin:0 auto 14px;">🔩</div><h3>Metal</h3><p>→ Metal emalına</p></div>
+    </div>
+
+    <div class="circular-economy reveal d2">
+      <div class="node">🗑️ Tullantı</div><span class="arrow">→</span>
+      <div class="node">🧱 Xammal</div><span class="arrow">→</span>
+      <div class="node">📦 Yeni məhsul</div><span class="arrow">→</span>
+      <div class="node">💰 İqtisadi dəyər</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUSINESS MODEL ============ -->
+<section class="section" id="model">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Business model</div>
+      <h2>EcoPoint necə gəlir əldə edir?</h2>
+      <p>Altı əsas gəlir kanalı üzərində qurulan dayanıqlı model.</p>
+    </div>
+
+    <div class="model-list reveal d1">
+      <div class="model-row"><div class="model-num">01</div><div><h4>♻️ Təkrar emal materiallarının satışı</h4><p>Toplanan xammal təkrar emal müəssisələrinə satılır.</p></div></div>
+      <div class="model-row"><div class="model-num">02</div><div><h4>🏢 Şirkətlərə tullantı toplama və çeşidləmə xidməti</h4><p>Korporativ müştərilər üçün xüsusi həllər.</p></div></div>
+      <div class="model-row"><div class="model-num">03</div><div><h4>📅 Müəssisələrdən aylıq tullantı idarəetmə ödənişi</h4><p>Abunə əsaslı xidmət modeli.</p></div></div>
+      <div class="model-row"><div class="model-num">04</div><div><h4>📢 EcoPoint məntəqələrində reklam və sponsorluq</h4><p>Brendlər üçün ekoloji görünürlük.</p></div></div>
+      <div class="model-row"><div class="model-num">05</div><div><h4>📊 Ekoloji hesabat və tullantı idarəetmə xidməti</h4><p>Analitika və hesabatlıq xidmətləri.</p></div></div>
+      <div class="model-row"><div class="model-num">06</div><div><h4>🤝 Yerli və böyük bizneslərlə tərəfdaşlıq proqramları</h4><p>Uzunmüddətli strateji əməkdaşlıqlar.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECOSYSTEM ============ -->
+<section class="section section--alt" id="ecosystem">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Ekosistem</div>
+      <h2>EcoPoint ekosistemi</h2>
+      <p>Bütün tərəflər bir mərkəz ətrafında birləşir və bir-birinə dəyər yaradır.</p>
+    </div>
+
+    <div class="ecosystem-wrap reveal d1">
+      <div class="eco-ring"></div>
+      <div class="eco-center">ECOPOINT<span>Mərkəzi platforma</span></div>
+      <div class="eco-node eco-n1"><span class="emoji">👤</span>İstifadəçi</div>
+      <div class="eco-node eco-n2"><span class="emoji">🏫</span>Məktəb / Universitet</div>
+      <div class="eco-node eco-n3"><span class="emoji">🏢</span>Biznes</div>
+      <div class="eco-node eco-n4"><span class="emoji">♻️</span>EcoPoint məntəqəsi</div>
+      <div class="eco-node eco-n5"><span class="emoji">🎁</span>Mükafat tərəfdaşları</div>
+      <div class="eco-node eco-n6"><span class="emoji">🏭</span>Təkrar emal müəssisələri</div>
+      <div class="eco-node eco-n7"><span class="emoji">🌱</span>Ekoloji layihələr</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ƏSAS DƏYƏR MÜBADİLƏSİ ============ -->
+<section class="section" id="exchange">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Dəyər mübadiləsi</div>
+      <h2>Hər tərəf nə qazanır?</h2>
+    </div>
+
+    <div class="exchange-grid reveal d1">
+      <div class="exchange-card"><div class="emoji">👤</div><h4>İstifadəçi</h4><p>Tullantını çeşidləyir</p><div class="arrow-down">↓</div><p><b>Mükafat qazanır</b></p></div>
+      <div class="exchange-card"><div class="emoji">🏢</div><h4>Biznes</h4><p>EcoPoint-a qoşulur</p><div class="arrow-down">↓</div><p><b>Yeni müştəri + ekoloji reputasiya qazanır</b></p></div>
+      <div class="exchange-card"><div class="emoji">♻️</div><h4>EcoPoint</h4><p>Tullantını toplayır və təkrar emal edir</p><div class="arrow-down">↓</div><p><b>Gəlir əldə edir</b></p></div>
+      <div class="exchange-card"><div class="emoji">🌍</div><h4>Ətraf mühit</h4><p>Daha az tullantı, daha çox təkrar emal</p><div class="arrow-down">↓</div><p><b>Daha az çirklənmə</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EKOLOJİ TƏSİR ============ -->
+<section class="section section--dark" id="impact">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Ekoloji təsir</div>
+      <h2>Daha yaşıl şəhər üçün</h2>
+      <p>EcoPoint-un uzunmüddətli hədəfi — şəhərin tullantı idarəetməsini kökündən dəyişmək.</p>
+    </div>
+
+    <div class="impact-grid reveal d1">
+      <div class="impact-card"><div class="emoji">♻️</div><div class="num"><span data-counter="40" data-suffix="%">0</span></div><div class="label">Poliqonlara gedən tullantının azalması</div><span class="impact-tag">Hədəf</span></div>
+      <div class="impact-card"><div class="emoji">🌱</div><div class="num"><span data-counter="65" data-suffix="%">0</span></div><div class="label">Təkrar emal səviyyəsinin yüksəlməsi</div><span class="impact-tag">Hədəf</span></div>
+      <div class="impact-card"><div class="emoji">💧</div><div class="num"><span data-counter="30" data-suffix="%">0</span></div><div class="label">Təbii resurs istifadəsinin azalması</div><span class="impact-tag">Potensial təsir</span></div>
+      <div class="impact-card"><div class="emoji">🌍</div><div class="num"><span data-counter="50" data-suffix="%">0</span></div><div class="label">Torpaq, su və hava çirklənməsinin azalması</div><span class="impact-tag">Potensial təsir</span></div>
+      <div class="impact-card"><div class="emoji">🔄</div><div class="num"><span data-counter="100" data-suffix="%">0</span></div><div class="label">Dairəvi iqtisadiyyata keçid</div><span class="impact-tag">Vizyon</span></div>
+    </div>
+    <div class="disclaimer-box reveal d2">Qeyd: Bu bölmədəki rəqəmlər real ölçülmüş nəticələr deyil — layihənin hədəflərini və potensial təsirini əks etdirən nümunəvi göstəricilərdir.</div>
+  </div>
+</section>
+
+<!-- ============ NİYƏ ECOPOINT ============ -->
+<section class="section" id="why">
+  <div class="container center-text">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Niyə EcoPoint?</div>
+      <h2>Biz sadəcə “təbiəti qoruyun” demirik.</h2>
+    </div>
+    <p class="statement reveal d1 max-w">Biz insanları buna görə <span style="color:var(--green-600);">mükafatlandırırıq.</span></p>
+    <div class="why-list reveal d2">
+      <div>Mükafatlandırırıq</div>
+      <div>Rəqəmsallaşdırırıq</div>
+      <div>Oyunlaşdırırıq</div>
+      <div>İqtisadi modelə çeviririk</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FUTURE VISION ============ -->
+<section class="section section--alt" id="future">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Gələcək vizyon</div>
+      <h2>Gələcəyin şəhəri daha ağıllı və daha yaşıl olacaq.</h2>
+    </div>
+
+    <div class="future-grid reveal d1">
+      <div class="future-card"><div class="emoji">🏙️</div><h4>Daha çox şəhərə genişlənmə</h4></div>
+      <div class="future-card"><div class="emoji">🤝</div><h4>Böyük biznes şəbəkələri ilə tərəfdaşlıq</h4></div>
+      <div class="future-card"><div class="emoji">📍</div><h4>Daha çox EcoPoint məntəqəsi</h4></div>
+      <div class="future-card"><div class="emoji">🤖</div><h4>AI əsaslı tullantı tanıma</h4></div>
+      <div class="future-card"><div class="emoji">🧠</div><h4>Daha ağıllı çeşidləmə</h4></div>
+      <div class="future-card"><div class="emoji">🎓</div><h4>Məktəb və universitet proqramları</h4></div>
+      <div class="future-card"><div class="emoji">🏢</div><h4>Korporativ ekoloji platforma</h4></div>
+      <div class="future-card"><div class="emoji">🏭</div><h4>Regional təkrar emal infrastrukturu</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section" id="cta">
+  <div class="container">
+    <div class="final-cta reveal">
+      <svg class="final-tosbik" viewBox="0 0 240 240"><use href="#tosbik-wave"/></svg>
+      <svg class="final-tosbik left" viewBox="0 0 240 240"><use href="#tosbik-leaf"/></svg>
+      <div class="eyebrow" style="background:rgba(255,255,255,0.1);color:var(--gold-light);">EcoPoint</div>
+      <h2>Tullantını dəyərə çevir.</h2>
+      <p>Kiçik bir hərəkət. Böyük bir ekoloji təsir.</p>
+      <div class="cta-row">
+        <a href="#ecosystem" class="btn btn-gold">EcoPoint haqqında daha çox öyrən</a>
+        <a href="#top" class="btn btn-outline">Ekosistemə qoşul</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg style="width:34px;height:34px;"><use href="#brand-mark"/></svg>
+          EcoPoint
+        </div>
+        <p style="max-width:280px;font-size:0.9rem;">Tullantıların çeşidlənməsi, toplanması və təkrar emalını rəqəmsal mükafat sistemi ilə birləşdirən ağıllı ekosistem.</p>
+      </div>
+      <div>
+        <h5>Layihə</h5>
+        <ul>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#solution">Necə işləyir</a></li>
+          <li><a href="#station">EcoPoint məntəqəsi</a></li>
+          <li><a href="#tosbik">Tosbik</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Ekosistem</h5>
+        <ul>
+          <li><a href="#ecocoin">EcoCoin</a></li>
+          <li><a href="#business">Bizneslər üçün</a></li>
+          <li><a href="#model">Business model</a></li>
+          <li><a href="#impact">Ekoloji təsir</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Əlaqə</h5>
+        <ul>
+          <li>info@ecopoint.az</li>
+          <li>Gəncə, Azərbaycan</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 EcoPoint. Bütün hüquqlar qorunur.</span>
+      <span>Tullantını dəyərə çevir. ♻️</span>
+    </div>
+    <p class="footer-disclaimer">Bu sayt EcoPoint layihəsinin konseptual təqdimatıdır. Saytda göstərilən tətbiq ekranları, məntəqə interfeysi, statistika və rəqəmlər yalnız illüstrativ nümunələrdir; real funksional sistem, qeydiyyat, ödəniş və ya məlumat bazası mövcud deyil.</p>
+  </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
