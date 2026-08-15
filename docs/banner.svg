@@ -1,0 +1,92 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a2e22"/>
+      <stop offset="55%" stop-color="#124d36"/>
+      <stop offset="100%" stop-color="#186644"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#2ea36f" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#2ea36f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="420" fill="url(#bg)"/>
+  <rect width="1200" height="420" fill="url(#glow)"/>
+
+  <!-- floating leaves -->
+  <text x="60" y="70" font-size="26" opacity="0.5">🍃</text>
+  <text x="1120" y="60" font-size="22" opacity="0.4">🍃</text>
+  <text x="980" y="380" font-size="24" opacity="0.35">🍃</text>
+
+  <!-- badge pill -->
+  <rect x="60" y="70" width="230" height="34" rx="17" fill="#ffffff" fill-opacity="0.1"/>
+  <text x="80" y="92" font-size="14" font-weight="700" fill="#4dbb87" font-family="Verdana, Arial, sans-serif" letter-spacing="0.5">♻️ SMART RECYCLING ECOSYSTEM</text>
+
+  <!-- headline -->
+  <text x="58" y="180" font-size="58" font-weight="800" fill="#ffffff" font-family="Verdana, Arial, sans-serif">Eco<tspan fill="#f0b429">Point</tspan></text>
+  <text x="60" y="230" font-size="27" font-weight="700" fill="#e3f4ea" font-family="Verdana, Arial, sans-serif">Tullantını dəyərə çevir. ♻️</text>
+  <text x="60" y="265" font-size="16" fill="#bcd6c8" font-family="Verdana, Arial, sans-serif">Tullantıların çeşidlənməsi, toplanması və təkrar emalını</text>
+  <text x="60" y="288" font-size="16" fill="#bcd6c8" font-family="Verdana, Arial, sans-serif">rəqəmsal mükafat sistemi ilə birləşdirən ağıllı ekosistem.</text>
+
+  <!-- fake buttons -->
+  <rect x="60" y="320" width="196" height="46" rx="23" fill="#1f8a5c"/>
+  <text x="88" y="349" font-size="15" font-weight="700" fill="#ffffff" font-family="Verdana, Arial, sans-serif">Necə işləyir?</text>
+  <rect x="270" y="320" width="150" height="46" rx="23" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2"/>
+  <text x="296" y="349" font-size="15" font-weight="700" fill="#ffffff" font-family="Verdana, Arial, sans-serif">Kəşf et</text>
+
+  <!-- ===== station ===== -->
+  <g transform="translate(830,60) scale(0.62)">
+    <ellipse cx="120" cy="326" rx="88" ry="11" fill="#000" opacity="0.15"/>
+    <rect x="40" y="36" width="160" height="270" rx="28" fill="#186644"/>
+    <rect x="56" y="56" width="128" height="80" rx="16" fill="#0a2e22"/>
+    <rect x="66" y="66" width="108" height="60" rx="10" fill="#2ea36f"/>
+    <text x="120" y="98" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="Verdana, Arial, sans-serif">+10 EcoCoin</text>
+    <text x="120" y="118" font-size="11" fill="#dff3e6" text-anchor="middle" font-family="Verdana, Arial, sans-serif">Plastik aşkarlandı</text>
+    <rect x="60" y="152" width="46" height="46" rx="12" fill="#fdf1d6"/>
+    <text x="83" y="182" font-size="22" text-anchor="middle">🥤</text>
+    <rect x="134" y="152" width="46" height="46" rx="12" fill="#fdf1d6"/>
+    <text x="157" y="182" font-size="22" text-anchor="middle">📄</text>
+    <rect x="60" y="208" width="46" height="46" rx="12" fill="#fdf1d6"/>
+    <text x="83" y="238" font-size="22" text-anchor="middle">🍾</text>
+    <rect x="134" y="208" width="46" height="46" rx="12" fill="#fdf1d6"/>
+    <text x="157" y="238" font-size="22" text-anchor="middle">🔩</text>
+    <circle cx="120" cy="24" r="9" fill="#f0b429"/>
+    <rect x="20" y="284" width="200" height="18" rx="9" fill="#124d36"/>
+  </g>
+
+  <!-- ===== Tosbik (waving) ===== -->
+  <g transform="translate(955,145) scale(0.62)">
+    <ellipse cx="120" cy="222" rx="72" ry="9" fill="#000" opacity="0.12"/>
+    <ellipse cx="72" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(-10 72 196)"/>
+    <ellipse cx="168" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(10 168 196)"/>
+    <ellipse cx="120" cy="150" rx="98" ry="72" fill="#0f5a3d"/>
+    <ellipse cx="120" cy="140" rx="86" ry="60" fill="#1f8a5c"/>
+    <g fill="#2ea36f" opacity="0.7">
+      <circle cx="90" cy="120" r="9"/><circle cx="120" cy="112" r="9"/><circle cx="150" cy="120" r="9"/>
+      <circle cx="75" cy="145" r="9"/><circle cx="105" cy="150" r="9"/><circle cx="135" cy="150" r="9"/><circle cx="165" cy="145" r="9"/>
+      <circle cx="90" cy="172" r="9"/><circle cx="120" cy="178" r="9"/><circle cx="150" cy="172" r="9"/>
+    </g>
+    <ellipse cx="50" cy="172" rx="20" ry="16" fill="#fbead0" transform="rotate(-18 50 172)"/>
+    <g transform="rotate(-30 190 150)"><ellipse cx="198" cy="128" rx="16" ry="23" fill="#fbead0"/></g>
+    <g stroke="#f0b429" stroke-width="4" stroke-linecap="round" opacity="0.7">
+      <line x1="224" y1="92" x2="234" y2="84"/><line x1="230" y1="110" x2="242" y2="108"/><line x1="222" y1="128" x2="232" y2="132"/>
+    </g>
+    <circle cx="120" cy="82" r="46" fill="#fdf1d6"/>
+    <ellipse cx="120" cy="102" rx="30" ry="15" fill="#fbe4bd" opacity="0.55"/>
+    <circle cx="102" cy="76" r="10" fill="#0d3b2a"/><circle cx="138" cy="76" r="10" fill="#0d3b2a"/>
+    <circle cx="105" cy="72" r="3" fill="#fff"/><circle cx="141" cy="72" r="3" fill="#fff"/>
+    <ellipse cx="92" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/><ellipse cx="148" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/>
+    <path d="M104 96 Q120 110 136 96" stroke="#0d3b2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- floating badges -->
+  <g font-family="Verdana, Arial, sans-serif">
+    <rect x="700" y="90" width="54" height="54" rx="16" fill="#ffffff" fill-opacity="0.95"/>
+    <text x="727" y="124" font-size="24" text-anchor="middle">🪙</text>
+    <rect x="1110" y="230" width="54" height="54" rx="16" fill="#ffffff" fill-opacity="0.95"/>
+    <text x="1137" y="264" font-size="24" text-anchor="middle">🌱</text>
+    <rect x="690" y="260" width="54" height="54" rx="16" fill="#ffffff" fill-opacity="0.95"/>
+    <text x="717" y="294" font-size="24" text-anchor="middle">♻️</text>
+  </g>
+</svg>
