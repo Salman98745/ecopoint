@@ -581,7 +581,7 @@ p { color: var(--text-muted); }
   .eco-center { position: static; transform: none; margin: 0 auto 20px; }
   .ecosystem-wrap svg.lines { display: none; }
   .eco-ring { display: none; }
-  .eco-node { position: static; width: 100%; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; text-align: left; padding: 14px 18px; }
+  .eco-node { position: static; width: 100%; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; text-align: left; padding: 14px 18px; transform: none; }
   .eco-node .emoji { margin: 0; font-size: 1.5rem; }
   .ecosystem-wrap { display: flex; flex-direction: column; overflow: visible; }
 }
