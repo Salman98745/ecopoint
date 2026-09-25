@@ -623,17 +623,31 @@ p { color: var(--text-muted); }
 
 /* ---------- Creator ---------- */
 
-.creator-card {
-  max-width: 420px; margin: 0 auto; text-align: center;
-  background: var(--white); border-radius: var(--radius-lg);
-  padding: 48px 40px; box-shadow: var(--shadow-md); border: 1px solid var(--border-soft);
+.creator-layout {
+  display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: center;
 }
-.creator-photo {
-  display: block; width: 128px; height: 128px; margin: 0 auto 20px;
-  border-radius: 50%; object-fit: cover; border: 4px solid var(--green-100); box-shadow: var(--shadow-sm);
+@media (max-width: 900px) { .creator-layout { grid-template-columns: 1fr; gap: 40px; } }
+
+.creator-photo-wrap { position: relative; max-width: 380px; margin: 0 auto; }
+.creator-photo-wrap::before {
+  content: ""; position: absolute; top: 22px; left: 22px; right: -22px; bottom: -22px;
+  background: var(--green-100); border-radius: var(--radius-lg); z-index: 0;
 }
-.creator-card h3 { margin: 4px 0 10px; }
-.creator-card p { font-size: 0.95rem; max-width: 300px; margin: 0 auto; }
+.creator-photo-full {
+  position: relative; z-index: 1; display: block; width: 100%;
+  aspect-ratio: 4 / 5; object-fit: cover; object-position: center 18%;
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+}
+
+.creator-info h2 { margin: 10px 0 6px; }
+.creator-role { color: var(--green-600); font-weight: 700; font-size: 1.02rem; margin-bottom: 18px; }
+.creator-bio { font-size: 1.02rem; line-height: 1.7; margin-bottom: 26px; max-width: 620px; }
+.creator-stats { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+.creator-stat {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--green-50); border: 1px solid var(--border-soft);
+  padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 0.88rem; color: var(--text-dark);
+}
 
 /* ---------- Final CTA ---------- */
 
