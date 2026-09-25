@@ -621,6 +621,20 @@ p { color: var(--text-muted); }
 .future-card { background: var(--white); border-radius: var(--radius-md); padding: 26px 22px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-soft); }
 .future-card .emoji { font-size: 1.7rem; margin-bottom: 10px; }
 
+/* ---------- Creator ---------- */
+
+.creator-card {
+  max-width: 420px; margin: 0 auto; text-align: center;
+  background: var(--white); border-radius: var(--radius-lg);
+  padding: 48px 40px; box-shadow: var(--shadow-md); border: 1px solid var(--border-soft);
+}
+.creator-photo {
+  display: block; width: 128px; height: 128px; margin: 0 auto 20px;
+  border-radius: 50%; object-fit: cover; border: 4px solid var(--green-100); box-shadow: var(--shadow-sm);
+}
+.creator-card h3 { margin: 4px 0 10px; }
+.creator-card p { font-size: 0.95rem; max-width: 300px; margin: 0 auto; }
+
 /* ---------- Final CTA ---------- */
 
 .final-cta {
