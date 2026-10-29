@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+
+<symbol id="brand-mark" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="50" fill="#1f8a5c"/>
+  <path d="M50 20c16 0 29 12 29 28 0 14-10 25-23 28l2-10c7-3 12-10 12-18 0-11-9-20-20-20s-20 9-20 20c0 8 5 15 12 18l2 10C29 73 19 62 19 48c0-16 13-28 31-28z" fill="#fff"/>
+  <circle cx="50" cy="48" r="8" fill="#f0b429"/>
+</symbol>
+
+<symbol id="tosbik-wave" viewBox="0 0 240 240">
+  <ellipse cx="120" cy="222" rx="72" ry="9" fill="#0d3b2a" opacity="0.08"/>
+  <ellipse cx="72" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(-10 72 196)"/>
+  <ellipse cx="168" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(10 168 196)"/>
+  <ellipse cx="120" cy="150" rx="98" ry="72" fill="#186644"/>
+  <ellipse cx="120" cy="140" rx="86" ry="60" fill="#1f8a5c"/>
+  <g fill="#2ea36f" opacity="0.7">
+    <circle cx="90" cy="120" r="9"/><circle cx="120" cy="112" r="9"/><circle cx="150" cy="120" r="9"/>
+    <circle cx="75" cy="145" r="9"/><circle cx="105" cy="150" r="9"/><circle cx="135" cy="150" r="9"/><circle cx="165" cy="145" r="9"/>
+    <circle cx="90" cy="172" r="9"/><circle cx="120" cy="178" r="9"/><circle cx="150" cy="172" r="9"/>
+  </g>
+  <ellipse cx="50" cy="172" rx="20" ry="16" fill="#fbead0" transform="rotate(-18 50 172)"/>
+  <g transform="rotate(-30 190 150)"><ellipse cx="198" cy="128" rx="16" ry="23" fill="#fbead0"/></g>
+  <g stroke="#c98a12" stroke-width="4" stroke-linecap="round" opacity="0.55">
+    <line x1="224" y1="92" x2="234" y2="84"/><line x1="230" y1="110" x2="242" y2="108"/><line x1="222" y1="128" x2="232" y2="132"/>
+  </g>
+  <circle cx="120" cy="82" r="46" fill="#fdf1d6"/>
+  <ellipse cx="120" cy="102" rx="30" ry="15" fill="#fbe4bd" opacity="0.55"/>
+  <circle cx="102" cy="76" r="10" fill="#0d3b2a"/><circle cx="138" cy="76" r="10" fill="#0d3b2a"/>
+  <circle cx="105" cy="72" r="3" fill="#fff"/><circle cx="141" cy="72" r="3" fill="#fff"/>
+  <ellipse cx="92" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/><ellipse cx="148" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/>
+  <path d="M104 96 Q120 110 136 96" stroke="#0d3b2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+</symbol>
+
+<symbol id="tosbik-happy" viewBox="0 0 240 240">
+  <ellipse cx="120" cy="222" rx="72" ry="9" fill="#0d3b2a" opacity="0.08"/>
+  <g transform="rotate(-12 72 196)"><ellipse cx="72" cy="192" rx="19" ry="24" fill="#fbead0"/></g>
+  <g transform="rotate(12 168 196)"><ellipse cx="168" cy="192" rx="19" ry="24" fill="#fbead0"/></g>
+  <ellipse cx="120" cy="150" rx="98" ry="72" fill="#186644"/>
+  <ellipse cx="120" cy="140" rx="86" ry="60" fill="#1f8a5c"/>
+  <g fill="#2ea36f" opacity="0.7">
+    <circle cx="90" cy="120" r="9"/><circle cx="120" cy="112" r="9"/><circle cx="150" cy="120" r="9"/>
+    <circle cx="75" cy="145" r="9"/><circle cx="105" cy="150" r="9"/><circle cx="135" cy="150" r="9"/><circle cx="165" cy="145" r="9"/>
+    <circle cx="90" cy="172" r="9"/><circle cx="120" cy="178" r="9"/><circle cx="150" cy="172" r="9"/>
+  </g>
+  <g transform="rotate(20 46 168)"><ellipse cx="46" cy="168" rx="19" ry="15" fill="#fbead0"/></g>
+  <g transform="rotate(-20 194 168)"><ellipse cx="194" cy="168" rx="19" ry="15" fill="#fbead0"/></g>
+  <g fill="#f0b429">
+    <path d="M40 50l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+    <path d="M200 40l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+    <path d="M195 90l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+  </g>
+  <circle cx="120" cy="82" r="46" fill="#fdf1d6"/>
+  <ellipse cx="120" cy="102" rx="30" ry="15" fill="#fbe4bd" opacity="0.55"/>
+  <path d="M92 70 Q102 60 112 70" stroke="#0d3b2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M128 70 Q138 60 148 70" stroke="#0d3b2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="92" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.6"/><ellipse cx="148" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.6"/>
+  <path d="M100 94 Q120 118 140 94 Q120 106 100 94Z" fill="#0d3b2a"/>
+  <path d="M108 98 Q120 106 132 98" stroke="#e8583f" stroke-width="4" fill="none" stroke-linecap="round"/>
+</symbol>
+
+<symbol id="tosbik-trophy" viewBox="0 0 240 240">
+  <ellipse cx="120" cy="222" rx="72" ry="9" fill="#0d3b2a" opacity="0.08"/>
+  <ellipse cx="72" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(-10 72 196)"/>
+  <ellipse cx="168" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(10 168 196)"/>
+  <ellipse cx="120" cy="150" rx="98" ry="72" fill="#186644"/>
+  <ellipse cx="120" cy="140" rx="86" ry="60" fill="#1f8a5c"/>
+  <g fill="#2ea36f" opacity="0.7">
+    <circle cx="90" cy="120" r="9"/><circle cx="120" cy="112" r="9"/><circle cx="150" cy="120" r="9"/>
+    <circle cx="75" cy="145" r="9"/><circle cx="105" cy="150" r="9"/><circle cx="135" cy="150" r="9"/><circle cx="165" cy="145" r="9"/>
+    <circle cx="90" cy="172" r="9"/><circle cx="120" cy="178" r="9"/><circle cx="150" cy="172" r="9"/>
+  </g>
+  <ellipse cx="50" cy="172" rx="20" ry="16" fill="#fbead0" transform="rotate(-18 50 172)"/>
+  <g transform="rotate(-18 192 120)">
+    <ellipse cx="196" cy="140" rx="16" ry="23" fill="#fbead0"/>
+    <g transform="translate(180,86)">
+      <path d="M0 8h28v6c0 9-6 15-14 15s-14-6-14-15V8z" fill="#f0b429"/>
+      <rect x="10" y="29" width="8" height="8" fill="#f0b429"/>
+      <rect x="4" y="37" width="20" height="5" rx="2" fill="#c98a12"/>
+      <path d="M0 10c-8 0-8 16 0 18" stroke="#f0b429" stroke-width="3" fill="none"/>
+      <path d="M28 10c8 0 8 16 0 18" stroke="#f0b429" stroke-width="3" fill="none"/>
+    </g>
+  </g>
+  <circle cx="120" cy="82" r="46" fill="#fdf1d6"/>
+  <ellipse cx="120" cy="102" rx="30" ry="15" fill="#fbe4bd" opacity="0.55"/>
+  <circle cx="102" cy="76" r="10" fill="#0d3b2a"/><circle cx="138" cy="76" r="10" fill="#0d3b2a"/>
+  <circle cx="105" cy="72" r="3" fill="#fff"/><circle cx="141" cy="72" r="3" fill="#fff"/>
+  <ellipse cx="92" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/><ellipse cx="148" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/>
+  <path d="M104 96 Q120 112 136 96" stroke="#0d3b2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+</symbol>
+
+<symbol id="tosbik-leaf" viewBox="0 0 240 240">
+  <ellipse cx="120" cy="222" rx="72" ry="9" fill="#0d3b2a" opacity="0.08"/>
+  <ellipse cx="72" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(-10 72 196)"/>
+  <ellipse cx="168" cy="196" rx="19" ry="24" fill="#fbead0" transform="rotate(10 168 196)"/>
+  <ellipse cx="120" cy="150" rx="98" ry="72" fill="#186644"/>
+  <ellipse cx="120" cy="140" rx="86" ry="60" fill="#1f8a5c"/>
+  <g fill="#2ea36f" opacity="0.7">
+    <circle cx="90" cy="120" r="9"/><circle cx="120" cy="112" r="9"/><circle cx="150" cy="120" r="9"/>
+    <circle cx="75" cy="145" r="9"/><circle cx="105" cy="150" r="9"/><circle cx="135" cy="150" r="9"/><circle cx="165" cy="145" r="9"/>
+    <circle cx="90" cy="172" r="9"/><circle cx="120" cy="178" r="9"/><circle cx="150" cy="172" r="9"/>
+  </g>
+  <ellipse cx="188" cy="172" rx="20" ry="16" fill="#fbead0" transform="rotate(18 188 172)"/>
+  <g transform="rotate(20 54 150)">
+    <ellipse cx="52" cy="150" rx="16" ry="23" fill="#fbead0"/>
+    <path d="M30 108c-14 6-16 26-4 34 2-14 8-24 4-34z" fill="#4dbb87"/>
+    <path d="M27 116c3 8 3 16 0 22" stroke="#186644" stroke-width="2" fill="none"/>
+  </g>
+  <circle cx="120" cy="82" r="46" fill="#fdf1d6"/>
+  <ellipse cx="120" cy="102" rx="30" ry="15" fill="#fbe4bd" opacity="0.55"/>
+  <circle cx="102" cy="76" r="10" fill="#0d3b2a"/><circle cx="138" cy="76" r="10" fill="#0d3b2a"/>
+  <circle cx="105" cy="72" r="3" fill="#fff"/><circle cx="141" cy="72" r="3" fill="#fff"/>
+  <ellipse cx="92" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/><ellipse cx="148" cy="92" rx="8" ry="5" fill="#f3a488" opacity="0.5"/>
+  <path d="M104 96 Q120 110 136 96" stroke="#0d3b2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+</symbol>
+
+<symbol id="ep-station" viewBox="0 0 240 340">
+  <ellipse cx="120" cy="326" rx="88" ry="11" fill="#0d3b2a" opacity="0.08"/>
+  <rect x="40" y="36" width="160" height="270" rx="28" fill="#186644"/>
+  <rect x="56" y="56" width="128" height="80" rx="16" fill="#0a2e22"/>
+  <rect x="66" y="66" width="108" height="60" rx="10" fill="#2ea36f"/>
+  <text x="120" y="98" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif">+10 EcoCoin</text>
+  <text x="120" y="118" font-size="11" fill="#dff3e6" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif">Plastik aşkarlandı</text>
+  <rect x="60" y="152" width="46" height="46" rx="12" fill="#fdf1d6"/>
+  <text x="83" y="182" font-size="22" text-anchor="middle">🥤</text>
+  <rect x="134" y="152" width="46" height="46" rx="12" fill="#fdf1d6"/>
+  <text x="157" y="182" font-size="22" text-anchor="middle">📄</text>
+  <rect x="60" y="208" width="46" height="46" rx="12" fill="#fdf1d6"/>
+  <text x="83" y="238" font-size="22" text-anchor="middle">🍾</text>
+  <rect x="134" y="208" width="46" height="46" rx="12" fill="#fdf1d6"/>
+  <text x="157" y="238" font-size="22" text-anchor="middle">🔩</text>
+  <circle cx="120" cy="24" r="9" fill="#f0b429"/>
+  <rect x="20" y="284" width="200" height="18" rx="9" fill="#124d36"/>
+</symbol>
+
+</defs>
+</svg>

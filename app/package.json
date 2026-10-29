@@ -1,0 +1,23 @@
+{
+  "name": "ecopoint-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EcoPoint — Smart Recycling Ecosystem (prototip tətbiq)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/smoke.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "express": "^5.3.0",
+    "jsqr": "^1.4.0",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "qrcode-generator": "^2.0.4"
+  }
+}

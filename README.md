@@ -24,9 +24,9 @@
 
 **EcoPoint** şəhərlərdə tullantıların çeşidlənməsini, toplanmasını və təkrar emalını rəqəmsal mükafat sistemi ilə birləşdirən ağıllı tullantı idarəetmə ekosistemi konseptidir.
 
-Bu repo **funksional bir tətbiq deyil** — layihənin nə olduğunu, hansı problemi həll etdiyini, necə işlədiyini və gələcək vizyonunu izah edən **tək-səhifəlik təqdimat saytıdır**. Sayt tamamilə Azərbaycan dilindədir.
+Repo iki hissədən ibarətdir: layihəni izah edən **tək-səhifəlik təqdimat saytı** (kökdə) və **işləyən prototip tətbiq** (`app/` və `demo/`). Hər ikisi tamamilə Azərbaycan dilindədir.
 
-> Saytda görünən tətbiq ekranları, EcoPoint məntəqəsi interfeysi, biznes paneli, leaderboard və statistika rəqəmləri yalnız illüstrativ vizual nümunələrdir. Real qeydiyyat, ödəniş, verilənlər bazası və ya backend mövcud deyil.
+> Təqdimat saytındakı tətbiq ekranları, biznes paneli, leaderboard və statistika rəqəmləri illüstrativ nümunələrdir. Prototipdə isə hesablar, EcoCoin, kuponlar və panellər həqiqətən işləyir; lakin fiziki avadanlıq simulyasiya olunur, real ödəniş/endirim inteqrasiyası yoxdur.
 
 ## ✨ Saytda nə var
 
@@ -65,9 +65,16 @@ ecopoint/
 ├── assets/
 │   ├── css/style.css        # Dizayn sistemi
 │   └── js/script.js         # Animasiyalar və interaktiv mock-lar
+├── demo/                   # Prototipin statik demo versiyası (GitHub Pages)
+├── app/                    # Prototipin server versiyası (Node.js + SQLite)
 └── docs/
     └── banner.svg            # README banner
 ```
+
+## 🧪 Prototip (işləyən tətbiq)
+
+- **Canlı demo (brauzerdə, serversiz):** [salman98745.github.io/ecopoint/demo](https://salman98745.github.io/ecopoint/demo/) — qeydiyyat, QR, məntəqə (kiosk) ekranı, EcoCoin, mükafatlar, reytinq, B2B və admin paneli. Məlumatlar yalnız sənin brauzerində saxlanılır.
+- **Tam server versiyası** (Node + SQLite): [`app/`](app/) qovluğu — təlimat üçün [`app/README.md`](app/README.md).
 
 ## 🚀 Lokal işə salmaq
 
@@ -83,4 +90,4 @@ Sonra brauzerdə `http://localhost:8080` açın.
 
 ## 📄 Qeyd
 
-Bu layihə tədris/portfolio məqsədli konseptual bir təqdimatdır. Login, qeydiyyat, real EcoCoin əməliyyatları, QR skaner və verilənlər bazası kimi funksional komponentlər qəsdən yaradılmayıb — məqsəd ideyanı vizual və aydın şəkildə çatdırmaqdır.
+Bu layihə tədris/portfolio məqsədli konseptual bir təqdimat və onun işləyən prototipidir. Fiziki sensorlar, real ödəniş və real endirim inteqrasiyası qəsdən yoxdur — onlar simulyasiya olunur.
